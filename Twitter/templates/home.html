@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
+    <title>{{ title }}</title>
+</head>
+<body>
+
+
+<div class="topnav">
+    <a href="about"><button>About</button></a>
+    <a href="user_login"><button onclick="document.getElementById('id01').style.display='block'">User</button></a>
+    <!--a href="doctor_login"><button onclick="document.getElementById('id02').style.display='block'">Doctor</button></a-->
+    <a  href="/home"><button class="active">Home</button></a>
+</div>
+
+<h1 ><center>Social Rank Prediction system </center></h1>
+<div style="padding-left:15%;padding-right:15%;">
+<p>The goal of our method—SociRank—is to identify, consolidate and rank
+    the most prevalent topics discussed in both news media and social media
+    during a specific period of time. To achieve its goal, the system must undergo four main stages. </p>
+    <p>
+1) Preprocessing: Key terms are extracted and filtered from news and social data corresponding
+        to a particular period of time. </p>
+    <p>
+2) Key Term Graph Construction: A graph is constructed from the previously extracted key term set,
+        whose vertices represent the key terms and edges represent the co-occurrence similarity between them.
+        The graph, after processing and pruning,
+    contains slightly joint clusters of topics popular in both news media and social media. </p>
+    </div>
+<center>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="{{url_for('static', filename='logo1.jpg')}}" align="middle" style="width:1000px;height:400px;"/>
+</div>
+
+<div class="mySlides fade">
+  <img src="{{url_for('static', filename='1.jpg')}}" align="middle" style="width:1000px;height:400px;"/>
+</div>
+
+<div class="mySlides fade">
+  <img src="{{url_for('static', filename='2.jpg')}}" align="middle" style="width:1000px;height:400px;"/>
+</div>
+
+<div class="mySlides fade">
+
+  <img src="{{url_for('static', filename='3.jpg')}}" align="middle" style="width:1000px;height:400px;"/>
+</div>
+
+<!--div class="mySlides fade">
+
+  <img src="{{url_for('static', filename='z1.jpg')}}" align="middle" />
+</div-->
+
+</div>
+</center>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+<script src="{{url_for('static', filename='login.js')}}"></script>
+
+<script src="{{url_for('static', filename='main.js')}}"></script>
+
+
+</body>
+
+</html>

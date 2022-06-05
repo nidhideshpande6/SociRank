@@ -1,0 +1,2 @@
+pip install gensim-3.8.1
+pip install spacy
