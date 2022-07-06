@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='account.css') }}">
+    <title>Title</title>
+    <style>
+        .code{
+        color:blue;
+        }
+    </style>
+</head>
+<body>
+<div class="topnav">
+  <a class="active" href>
+  <a class="active" href="/logout">logout</a></a>
+</div>
+    <center>{% with messages = get_flashed_messages() %}
+   {% if messages %}
+     <ul class="flashes">
+        {% for message in messages %}
+         <div class="message_flash">{{ message }}</div>
+        {% endfor %}
+    </ul>
+  {% endif %}
+ {% endwith %}</center>
+
+    <div class="container">
+        <br>
+        <br>
+        <center>
+        <form action = "/predict" method = "post" enctype="multipart/form-data">
+        {% for i in title %}
+            <div class="message_flash">{{ i }}</div>
+            {% endfor %}
+
+            <label for="psw"><b></b></label><b>Country</b> <input type="text" placeholder="Enter country code" name="country"><br><br><br>
+            <label for="psw"><b></b></label><b>Catogery </b><input type="text" placeholder="Enter category" name="catogery"><br><br>
+
+                <div class="form-group">
+                 <center><button type="submit" class="btn btn-outline-info" >Get Rank </button></center>
+    </div>
+        </form></center>
+    </div>
+
+   <div class="code">
+      <center>
+          <br><br>
+          <h4 style="color:maroon;">Look here for the country code</h4>
+          <table border="1">
+              <tr><th>Country code</th>
+              <th>country name</th>
+              </tr>
+              <tr>
+                  <td>ae</td><td>United arab emirates dirham</td>
+              </tr>
+              <tr>
+                  <td>ar</td><td>Argentine</td>
+              </tr>
+              <tr>
+                  <td>at</td><td>Austria</td>
+              </tr>
+              <tr>
+                  <td>au</td><td>Australia</td>
+              </tr>
+              <tr>
+                  <td>be</td><td>Belgium</td>
+              </tr>
+              <tr>
+                  <td>bg</td><td>Bulgaria</td>
+              </tr>
+              <tr>
+                  <td>br</td><td>Brazil</td>
+              </tr>
+              <tr>
+                  <td>ca</td><td>Canada</td>
+              </tr>
+              <tr>
+                  <td>ch</td><td>Switzerland</td>
+              </tr>
+              <tr>
+                  <td>cn</td><td>China</td>
+              </tr>
+              <tr>
+                  <td>co</td><td>Colombia</td>
+              </tr>
+              <tr>
+                  <td>cu</td><td>Cuba</td>
+              </tr>
+              <tr>
+                  <td>cz</td><td>Czech Republic</td>
+              </tr>
+              <tr>
+                  <td>de</td><td>Federal republic of germany</td>
+              </tr>
+               <tr>
+                  <td>eg</td><td>Egypt</td>
+              </tr>
+               <tr>
+                  <td>fr</td><td>France</td>
+              </tr>
+              <tr>
+                  <td>gb</td><td>United Kingdom</td>
+              </tr>
+              <tr>
+                  <td>gr</td><td>Greece</td>
+              </tr>
+              <tr>
+                  <td>hk</td><td>Hongkong</td>
+              </tr>
+              <tr>
+                  <td>hu</td><td>Hungary</td>
+              </tr>
+              <tr>
+                  <td>id</td><td>Indonesia</td>
+              </tr>
+              <tr>
+                  <td>ie</td><td>Ireland</td>
+              </tr>
+              <tr>
+                  <td>il</td><td>Israel</td>
+              </tr>
+              <tr>
+                  <td>in</td><td>India</td>
+              </tr>
+              <tr>
+                  <td>it</td><td>Italy</td>
+              </tr>
+              <tr>
+                  <td>jp</td><td>Japan</td>
+              </tr>
+              <tr>
+                  <td>kr</td><td>South koria</td>
+              </tr>
+              <tr>
+                  <td>lt</td><td>Lithuania</td>
+              </tr>
+              <tr>
+                  <td>lv</td><td>Latvia</td>
+              </tr>
+              <tr>
+                  <td>ma</td><td>Morocco</td>
+              </tr>
+              <tr>
+                  <td>mx</td><td>Mexico</td>
+              </tr>
+              <tr>
+                  <td>my</td><td>Malaysia</td>
+              </tr>
+              <tr>
+                  <td>ng</td><td>Nigeria</td>
+              </tr>
+              <tr>
+                  <td>nl</td><td>Netherlands</td>
+              </tr>
+              <tr>
+                  <td>no</td><td>Norway</td>
+              </tr>
+              <tr>
+                  <td>nz</td><td>NewZealand</td>
+              </tr>
+              <tr>
+                  <td>ph</td><td>Philippines</td>
+              </tr>
+              <tr>
+                  <td>pl</td><td>Poland</td>
+              </tr>
+              <tr>
+                  <td>pt</td><td>Portugal</td>
+              </tr>
+              <tr>
+                  <td>ro</td><td>Romania</td>
+              </tr>
+              <tr>
+                  <td>rs</td><td>Serbia</td>
+              </tr>
+              <tr>
+                  <td>ru</td><td>Russia</td>
+              </tr>
+              <tr>
+                  <td>sa</td><td>South Africa</td>
+              </tr>
+              <tr>
+                  <td>se</td><td>Sweden</td>
+              </tr>
+              <tr>
+                  <td>sg</td><td>Singapore</td>
+              </tr>
+              <tr>
+                  <td>si</td><td>Slovenia</td>
+              </tr>
+              <tr>
+                  <td>sk</td><td>Slovakia</td>
+              </tr>
+              <tr>
+                  <td>th</td><td>Thailand</td>
+              </tr>
+              <tr>
+                  <td>tr</td><td>Turkey</td>
+              </tr>
+              <tr>
+                  <td>tw</td><td>Taiwan</td>
+              </tr>
+              <tr>
+                  <td>ua</td><td>Ukarine</td>
+              </tr>
+              <tr>
+                  <td>us</td><td>United states</td>
+              </tr>
+              <tr>
+                  <td>ve</td><td>Venezuela</td>
+              </tr>
+              <tr>
+                  <td>za</td><td>South Africa</td>
+              </tr>
+          </table>
+      </center>
+   </div>
+</body>
+</html>

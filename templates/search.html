@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!--    <form action = "/analyse" method = "post" enctype="multipart/form-data">-->
+<!--        <input class="btn btn-outline-info" type="file" name="file1" />-->
+<!--        <input class="btn btn-outline-info" type="file" name="file2" />-->
+<!--        <input class="btn btn-outline-info" type = "submit" value="predict">-->
+<!--    </form>-->
+<center><h2>News according to trend and country!</h2></center>
+    <center>{% with messages = get_flashed_messages() %}
+   {% if messages %}
+     <ul class="flashes">
+        {% for message in messages %}
+         <div class="message_flash">{{ message }}</div>
+        {% endfor %}
+     </ul>
+
+
+  {% endif %}
+ {% endwith %}</center>
+<div >
+        <br>
+        <br><div style="margin-left:15%;margin-right:15%;" ><table border="1">
+         <tr><th>Ranked news of country <b>{{ cont }}</b>  according to trend</th></tr>
+        <ol type="1">{% for i in title %}<tr><td>
+            <div class="message_flash"><li>{{ i }}</li></div><br></td></tr>
+            {% endfor %}</ol></table></div>
+</div>
+{% endblock content %}
